@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
 const NameSchema = new mongoose.Schema({
-    Name: {
+    name: {
         type: String,
         required: true,
     },
-    Amount: {
+    amount: {
         type: Number,
         required: true,
     },
 });
 
-const Name = mongoose.model('Name', NameSchema);
+const Name = mongoose.model('names', NameSchema);
 module.exports = Name;

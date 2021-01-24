@@ -10,14 +10,22 @@
 </head>
 
 <body>
-  <div id="app">
-    <button v-on:click="sortByAmount">Sort by popularity</button>
-    <button v-on:click="sortAlphabetically">Sort alphabetically</button>
-    <button v-on:click="returnTotal">Return total</button>
-    <input v-on:change="returnAmount($event)" type="text"></input>
-    <ul v-for="name in json.names">
-      <li>{{name.name}} {{name.amount}}</li>
-    </ul>
+  <div id="app" class="app__container">
+    <div class="app__buttons">
+      <button v-on:click="sortByAmount">Sort by popularity</button>
+      <button v-on:click="sortAlphabetically">Sort alphabetically</button>
+      <button v-on:click="returnTotal">Return total</button>
+      <div class="app__input">
+        <label for="amount">Search for a name</label>
+        <input id="amount" v-on:change="returnAmount($event)" type="text"></input>
+      </div>
+    </div>
+    <details>
+      <summary>Show names</summary>
+      <ul v-for="name in json.names">
+        <li>{{name.name}} {{name.amount}}</li>
+      </ul>
+    </details>
 
   </div>
   <!-- built files will be auto injected -->
