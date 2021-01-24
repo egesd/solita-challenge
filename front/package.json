@@ -10,8 +10,11 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
+  "postinstall": "npm run build",
+  "start": "node server.js",
   "dependencies": {
     "axios": "^0.21.1",
+    "express": "^4.17.1",
     "vue": "^2.5.2"
   },
   "devDependencies": {
